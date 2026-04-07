@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuòco — Italian Fire &amp; Flavour</title>
+  <style>
+    @font-face {
+      font-family: 'Pinyon Script';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Pinyon Script'), local('Brush Script MT'), local('Snell Roundhand'), local('Zapf Chancery');
+    }
+  </style>
+  <!-- Load Pinyon Script from Google Fonts for supported environments -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:   #ffffff;
+      --dark:    #1a1208;
+      --accent:  #b8914a;
+      --light:   #f7f3ed;
+      --mid:     #e8dfd0;
+      --muted:   #7a6a55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Typography ────────────────────────────────────────────────── */
+    h1, h2, h3, h4, h5, h6 { font-family: Georgia, 'Times New Roman', serif; }
+
+    /* ─── Navigation ────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--mid);
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      text-decoration: none;
+    }
+
+    .nav-logo-sig {
+      font-family: 'Pinyon Script', 'Brush Script MT', cursive;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo-sig .accent-o { color: var(--accent); }
+
+    .nav-tagline {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dark);
+      transition: color 0.25s;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── Hero ──────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--light);
+      padding: 96px 40px 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--mid);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,145,74,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .hero-sig {
+      font-family: 'Pinyon Script', 'Brush Script MT', cursive;
+      font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 0.95;
+      margin-bottom: 28px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-sig .accent-o { color: var(--accent); }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0 auto 28px;
+    }
+
+    .hero-sub {
+      font-size: 0.88rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 14px 40px;
+      background: var(--dark);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      transition: background 0.28s, color 0.28s;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* ─── Ticker Bar ────────────────────────────────────────────────── */
+    .ticker {
+      background: var(--dark);
+      color: var(--white);
+      padding: 11px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker-scroll 38s linear infinite;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .ticker-inner span { margin: 0 36px; }
+    .ticker-inner .dot { color: var(--accent); }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ─── Section Shared ────────────────────────────────────────────── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.63rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin: 18px auto 0;
+    }
+
+    /* ─── Main Content ──────────────────────────────────────────────── */
+    .menu-page { padding: 0; }
+
+    /* ─── Menu Section ───────────────────────────────────────────────── */
+    .menu-section {
+      padding: 72px 40px;
+      border-bottom: 1px solid var(--mid);
+    }
+
+    .menu-section:nth-child(even) { background: var(--light); }
+    .menu-section:nth-child(odd)  { background: var(--white); }
+
+    /* ─── Grid ──────────────────────────────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ─── Menu Card ─────────────────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--mid);
+      padding: 28px 26px;
+      position: relative;
+      transition: box-shadow 0.28s ease, transform 0.28s ease;
+      cursor: default;
+    }
+
+    .menu-section:nth-child(even) .card { background: var(--white); }
+    .menu-section:nth-child(odd)  .card { background: var(--light); }
+
+    .card:hover {
+      box-shadow: 0 8px 32px rgba(26, 18, 8, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .card-name {
+      font-size: 1.06rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-family: Georgia, serif;
+      font-style: normal;
+    }
+
+    .card-price {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-style: normal;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .card-price strong {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* ─── Caviar Card ───────────────────────────────────────────────── */
+    .card-caviar {
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ─── Drink List ────────────────────────────────────────────────── */
+    .drink-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .drink-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 18px;
+      border: 1px solid var(--mid);
+      background: var(--white);
+      transition: background 0.22s;
+    }
+
+    .menu-section:nth-child(even) .drink-item { background: var(--white); }
+    .menu-section:nth-child(odd)  .drink-item { background: var(--light); }
+
+    .drink-item:hover { background: var(--mid); }
+
+    .drink-name {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--dark);
+      font-family: Georgia, serif;
+    }
+
+    .drink-price {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      white-space: nowrap;
+      margin-left: 12px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    /* ─── Ambiance Section ──────────────────────────────────────────── */
+    .ambiance {
+      background: var(--dark);
+      padding: 88px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ambiance::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(184,145,74,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .ambiance-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .ambiance-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    .ambiance-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0 auto 28px;
+    }
+
+    .ambiance-body {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.9;
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .ambiance-stats {
+      display: flex;
+      justify-content: center;
+      gap: 72px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2.4rem;
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    /* ─── Locations Section ─────────────────────────────────────────── */
+    .locations {
+      padding: 88px 40px;
+      background: var(--white);
+      border-bottom: 1px solid var(--mid);
+    }
+
+    .locations .section-header { margin-bottom: 56px; }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .location-card {
+      border: 1px solid var(--mid);
+      padding: 40px 36px;
+      background: var(--light);
+      transition: box-shadow 0.28s ease, transform 0.28s ease;
+    }
+
+    .location-card:hover {
+      box-shadow: 0 8px 32px rgba(26, 18, 8, 0.07);
+      transform: translateY(-2px);
+    }
+
+    .location-city {
+      font-size: 0.62rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .location-name {
+      font-size: 1.55rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .location-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .location-detail {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .location-detail strong {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      font-weight: 500;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* ─── Reservation Bar ───────────────────────────────────────────── */
+    .reservation {
+      background: var(--accent);
+      padding: 52px 40px;
+      text-align: center;
+    }
+
+    .reservation-text {
+      font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      color: var(--white);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .reservation-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .reservation-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .reservation-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid var(--white);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      transition: background 0.28s, color 0.28s;
+    }
+
+    .reservation-btn:hover,
+    .reservation-btn.primary {
+      background: var(--white);
+      color: var(--accent);
+    }
+
+    .reservation-btn.primary:hover {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--white);
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────────── */
+    .footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 72px 40px 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 44px;
+      max-width: 1200px;
+      margin: 0 auto 56px;
+    }
+
+    .footer-logo-sig {
+      font-family: 'Pinyon Script', 'Brush Script MT', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo-sig .accent-o { color: var(--accent); }
+
+    .footer-tagline {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .footer-body {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.85;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .footer-heading {
+      font-size: 0.6rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      text-align: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      max-width: 1200px;
+      margin: 0 auto;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 64px 20px 56px; }
+      .menu-section { padding: 52px 20px; }
+      .ambiance { padding: 64px 20px; }
+      .ambiance-stats { gap: 40px; }
+      .locations { padding: 64px 20px; }
+      .reservation { padding: 40px 20px; }
+      .footer { padding: 56px 20px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <a class="nav-logo" href="#">
+    <span class="nav-logo-sig">Fu<span class="accent-o">ò</span>co</span>
+    <span class="nav-tagline">Italian Fire &amp; Flavour</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#caviar">Caviar</a></li>
+    <li><a href="#starters">Starters</a></li>
+    <li><a href="#small-plates">Small Plates</a></li>
+    <li><a href="#mains">Mains</a></li>
+    <li><a href="#bar">Bar</a></li>
+    <li><a href="#desserts">Desserts</a></li>
+    <li><a href="#locations">Locations</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section class="hero">
+  <p class="hero-eyebrow">Lahore &nbsp;·&nbsp; Islamabad</p>
+  <div class="hero-sig">Fu<span class="accent-o">ò</span>co</div>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">Italian Fire &amp; Flavour &nbsp;—&nbsp; Where every dish is a story of passion, fire &amp; provenance</p>
+  <a class="hero-cta" href="#caviar">Explore the Menu</a>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TICKER
+═══════════════════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Fuòco Restaurants</span>
+    <span class="dot">✦</span>
+    <span>Lahore &amp; Islamabad</span>
+    <span class="dot">✦</span>
+    <span>Italian Fire &amp; Flavour</span>
+    <span class="dot">✦</span>
+    <span>Open Daily — 1 pm to Late</span>
+    <span class="dot">✦</span>
+    <span>Reservations Available</span>
+    <span class="dot">✦</span>
+    <span>Illy Certified Coffee</span>
+    <span class="dot">✦</span>
+    <span>Fuòco Restaurants</span>
+    <span class="dot">✦</span>
+    <span>Lahore &amp; Islamabad</span>
+    <span class="dot">✦</span>
+    <span>Italian Fire &amp; Flavour</span>
+    <span class="dot">✦</span>
+    <span>Open Daily — 1 pm to Late</span>
+    <span class="dot">✦</span>
+    <span>Reservations Available</span>
+    <span class="dot">✦</span>
+    <span>Illy Certified Coffee</span>
+  </div>
+</div>
+
+<main class="menu-page">
+
+  <!-- ─── OSCIETRA CAVIAR ──────────────────────────────────────────── -->
+  <section class="menu-section" id="caviar">
+    <div class="section-header">
+      <span class="section-label">Finest Selection</span>
+      <h2 class="section-title">Oscietra Caviar</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card card-caviar">
+        <p class="card-tag">Kaluga</p>
+        <h3 class="card-name">Kaluga Caviar</h3>
+        <p class="card-desc">Rich, buttery pearls with a long, complex finish. Harvested from sustainably farmed Kaluga sturgeon — one of the world's largest freshwater fish. Served with blinis and crème fraîche.</p>
+        <p class="card-price">PKR <strong>12,500</strong> / 30g</p>
+      </div>
+
+      <div class="card card-caviar">
+        <p class="card-tag">Royal</p>
+        <h3 class="card-name">Royal Caviar</h3>
+        <p class="card-desc">Medium-sized grey-green pearls with a nutty, oceanic flavour. A refined selection for the discerning palate, presented in the classic manner with traditional garnishes.</p>
+        <p class="card-price">PKR <strong>18,000</strong> / 30g</p>
+      </div>
+
+      <div class="card card-caviar">
+        <p class="card-tag">Imperial</p>
+        <h3 class="card-name">Imperial Caviar</h3>
+        <p class="card-desc">The pinnacle of our caviar programme. Golden-brown pearls of rare beauty with an extraordinarily smooth, lingering taste. For those who seek the very finest.</p>
+        <p class="card-price">PKR <strong>26,000</strong> / 30g</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── STARTERS ─────────────────────────────────────────────────── -->
+  <section class="menu-section" id="starters">
+    <div class="section-header">
+      <span class="section-label">To Begin</span>
+      <h2 class="section-title">Starters</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Tuna Tartare</h3>
+        <p class="card-desc">Hand-cut sashimi-grade tuna with avocado, sesame, citrus ponzu, pickled ginger, and micro herbs. Served with wonton crisps.</p>
+        <p class="card-price">PKR <strong>2,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Beef</p>
+        <h3 class="card-name">Beef Carpaccio</h3>
+        <p class="card-desc">Thinly sliced prime beef fillet, dressed with extra-virgin olive oil, lemon, capers, shaved Parmigiano-Reggiano, and fresh rocket.</p>
+        <p class="card-price">PKR <strong>2,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Bruschetta</h3>
+        <p class="card-desc">Charred sourdough topped with heirloom tomatoes, fresh basil, garlic-infused olive oil, and a drizzle of aged balsamic reduction.</p>
+        <p class="card-price">PKR <strong>1,400</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SALADS ──────────────────────────────────────────────────── -->
+  <section class="menu-section" id="salads">
+    <div class="section-header">
+      <span class="section-label">Fresh &amp; Light</span>
+      <h2 class="section-title">Salads</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Seasonal</p>
+        <h3 class="card-name">Peach &amp; Prosciutto</h3>
+        <p class="card-desc">Grilled white peaches, thinly sliced prosciutto di Parma, burrata, wild rocket, toasted hazelnuts, and a honey-mustard vinaigrette.</p>
+        <p class="card-price">PKR <strong>2,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seasonal</p>
+        <h3 class="card-name">Fig Salad</h3>
+        <p class="card-desc">Fresh black figs, gorgonzola, candied walnuts, radicchio, endive, and a pomegranate molasses dressing. A harmony of sweet and savoury.</p>
+        <p class="card-price">PKR <strong>2,000</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Classic</p>
+        <h3 class="card-name">Caesar Salad</h3>
+        <p class="card-desc">Crisp Cos lettuce, house-made Caesar dressing, shaved Parmigiano, garlic croutons, and crispy pancetta lardons. Grilled chicken optional.</p>
+        <p class="card-price">PKR <strong>1,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Beef</p>
+        <h3 class="card-name">Steak Salad</h3>
+        <p class="card-desc">Sliced grilled sirloin over mixed greens, pickled red onions, cherry tomatoes, crumbled blue cheese, and a red-wine vinaigrette.</p>
+        <p class="card-price">PKR <strong>3,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Duck</p>
+        <h3 class="card-name">Duck Confit Salad</h3>
+        <p class="card-desc">Slow-cooked duck leg, crispy skin, frisée, roasted beets, orange segments, and toasted pine nuts with a sherry vinaigrette.</p>
+        <p class="card-price">PKR <strong>3,400</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SANDWICHES & BURGERS ──────────────────────────────────────── -->
+  <section class="menu-section" id="burgers">
+    <div class="section-header">
+      <span class="section-label">Handcrafted</span>
+      <h2 class="section-title">Sandwiches &amp; Burgers</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Signature</p>
+        <h3 class="card-name">Amelia</h3>
+        <p class="card-desc">Grilled chicken breast, sun-dried tomato aioli, avocado, rocket, roasted red peppers, and Provolone on a toasted brioche bun.</p>
+        <p class="card-price">PKR <strong>2,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Cauliflower Burger</h3>
+        <p class="card-desc">Whole roasted cauliflower steak, harissa yoghurt, pickled jalapeños, baby spinach, and smoked paprika mayo on a sesame brioche bun.</p>
+        <p class="card-price">PKR <strong>2,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Signature</p>
+        <h3 class="card-name">Modena</h3>
+        <p class="card-desc">Double Wagyu beef patty, aged cheddar, balsamic-glazed onions, rocket, truffle mayo, and a touch of Modena balsamic on brioche.</p>
+        <p class="card-price">PKR <strong>3,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Classic</p>
+        <h3 class="card-name">Classic Burger</h3>
+        <p class="card-desc">180 g prime beef patty, American cheese, lettuce, tomato, dill pickle, and house burger sauce on a toasted sesame bun. Served with fries.</p>
+        <p class="card-price">PKR <strong>2,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Spicy</p>
+        <h3 class="card-name">Arson Burger</h3>
+        <p class="card-desc">Crispy fried chicken, ghost pepper hot sauce, coleslaw, pickled cucumbers, and jalapeño cream cheese on a toasted pretzel bun.</p>
+        <p class="card-price">PKR <strong>2,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Plant-Based</p>
+        <h3 class="card-name">Beyond Burger</h3>
+        <p class="card-desc">Beyond Meat patty, vegan cheese, caramelised onions, lettuce, tomato, and chipotle vegan aioli on a toasted vegan brioche bun.</p>
+        <p class="card-price">PKR <strong>2,600</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SOUPS ───────────────────────────────────────────────────── -->
+  <section class="menu-section" id="soups">
+    <div class="section-header">
+      <span class="section-label">Warm &amp; Comforting</span>
+      <h2 class="section-title">Soups</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Spinach Soup</h3>
+        <p class="card-desc">Velvety spinach and leek bisque with a swirl of crème fraîche, toasted pine nuts, and warm garlic focaccia on the side.</p>
+        <p class="card-price">PKR <strong>1,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Cauliflower Soup</h3>
+        <p class="card-desc">Roasted cauliflower velouté with aged Gruyère croutons, chives, and a drizzle of truffle oil. Light yet deeply satisfying.</p>
+        <p class="card-price">PKR <strong>1,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Tomato &amp; Goat Cheese</h3>
+        <p class="card-desc">Slow-roasted heirloom tomato soup with a whipped goat cheese quenelle, fresh basil oil, and toasted sourdough soldiers.</p>
+        <p class="card-price">PKR <strong>1,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seasonal</p>
+        <h3 class="card-name">Mushroom Soup</h3>
+        <p class="card-desc">Wild forest mushroom consommé with porcini cream, crispy shallots, fresh thyme, and a warm herbed bread roll.</p>
+        <p class="card-price">PKR <strong>1,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seasonal</p>
+        <h3 class="card-name">Pumpkin Soup</h3>
+        <p class="card-desc">Velvety roasted pumpkin soup with coconut cream, toasted pepitas, cardamom-spiced oil, and crispy sage leaves.</p>
+        <p class="card-price">PKR <strong>1,500</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SMALL PLATES ─────────────────────────────────────────────── -->
+  <section class="menu-section" id="small-plates">
+    <div class="section-header">
+      <span class="section-label">Sharing &amp; Grazing</span>
+      <h2 class="section-title">Small Plates</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Signature</p>
+        <h3 class="card-name">Birth of Emilia-Romagna</h3>
+        <p class="card-desc">A celebratory sharing board of Parmigiano-Reggiano, prosciutto di Parma, mortadella, house-pickled vegetables, and grissini.</p>
+        <p class="card-price">PKR <strong>3,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Fried Calamari</h3>
+        <p class="card-desc">Crispy golden rings of squid with seasoned semolina crust, served with lemon aioli, marinara sauce, and fresh lemon wedges.</p>
+        <p class="card-price">PKR <strong>2,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Beef</p>
+        <h3 class="card-name">Beef Tacos</h3>
+        <p class="card-desc">Slow-braised short rib in warm corn tortillas, pickled red cabbage slaw, chipotle crema, jalapeño salsa, and fresh coriander.</p>
+        <p class="card-price">PKR <strong>2,800</strong> (3 pcs)</p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Mushroom Risotto</h3>
+        <p class="card-desc">Carnaroli rice with mixed wild mushrooms, white wine, Parmigiano-Reggiano, fresh thyme, and a finishing drizzle of white truffle oil.</p>
+        <p class="card-price">PKR <strong>2,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Cheese</p>
+        <h3 class="card-name">Burrata</h3>
+        <p class="card-desc">Whole fresh burrata over heritage tomatoes, basil oil, Sicilian sea salt, cracked black pepper, and warm grilled focaccia.</p>
+        <p class="card-price">PKR <strong>2,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Whipped Ricotta</h3>
+        <p class="card-desc">Light whipped sheep's ricotta with roasted cherry tomatoes, fragrant pesto, toasted pine nuts, and warm crostini for spreading.</p>
+        <p class="card-price">PKR <strong>1,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Beef</p>
+        <h3 class="card-name">Smashed Sliders</h3>
+        <p class="card-desc">Three double-smashed Wagyu patties, American cheese, caramelised onion, house pickles, and special sauce in soft brioche buns.</p>
+        <p class="card-price">PKR <strong>3,200</strong> (3 pcs)</p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Raw Beef</p>
+        <h3 class="card-name">Steak Tartare</h3>
+        <p class="card-desc">Hand-chopped prime beef fillet, capers, shallots, Dijon, Worcestershire, egg yolk, and a light Tabasco finish. Served with toasted brioche.</p>
+        <p class="card-price">PKR <strong>3,000</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Raw Seafood</p>
+        <h3 class="card-name">Salmon Tartare</h3>
+        <p class="card-desc">Diced smoked and fresh salmon, dill crème fraîche, lemon zest, chives, cucumber ribbons, and salmon roe. Served with melba toast.</p>
+        <p class="card-price">PKR <strong>3,200</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── PASTA & RISOTTO ──────────────────────────────────────────── -->
+  <section class="menu-section" id="pasta">
+    <div class="section-header">
+      <span class="section-label">Italian Heart</span>
+      <h2 class="section-title">Pasta &amp; Risotto</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Spinach Alfredo</h3>
+        <p class="card-desc">House-made fettuccine in a classic Parmigiano-Reggiano and butter Alfredo sauce, tossed with sautéed baby spinach and toasted garlic.</p>
+        <p class="card-price">PKR <strong>2,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Vegetarian</p>
+        <h3 class="card-name">Mushroom &amp; Cream Garganelli</h3>
+        <p class="card-desc">Bronze-die garganelli with a rich porcini and double-cream sauce, Parmigiano, fresh thyme, and fried sage leaves.</p>
+        <p class="card-price">PKR <strong>2,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Farfalle with Shrimps</h3>
+        <p class="card-desc">Farfalle pasta with sautéed tiger prawns, cherry tomatoes, garlic, white wine, chilli flakes, and a lemon-herb butter finish.</p>
+        <p class="card-price">PKR <strong>3,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Linguine Vongole</h3>
+        <p class="card-desc">Linguine with fresh surf clams, white wine, garlic, parsley, lemon, chilli, and a touch of extra-virgin olive oil. A Neapolitan classic.</p>
+        <p class="card-price">PKR <strong>3,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Luxury</p>
+        <h3 class="card-name">Truffle Risotto</h3>
+        <p class="card-desc">Vialone nano risotto with black truffle paste, Parmigiano-Reggiano mantecatura, and shaved fresh black truffle. The ultimate indulgence.</p>
+        <p class="card-price">PKR <strong>4,200</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── MAINS ────────────────────────────────────────────────────── -->
+  <section class="menu-section" id="mains">
+    <div class="section-header">
+      <span class="section-label">The Centrepiece</span>
+      <h2 class="section-title">Mains</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Seared Salmon</h3>
+        <p class="card-desc">Pan-seared Atlantic salmon fillet, caper-butter sauce, wilted spinach, crushed new potatoes, and a lemon-dill emulsion.</p>
+        <p class="card-price">PKR <strong>4,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Premium Beef</p>
+        <h3 class="card-name">Wagyu Steak</h3>
+        <p class="card-desc">250 g Australian Wagyu striploin (MB 6–7), rested and sliced, with roasted bone marrow, pomme purée, and a red wine jus.</p>
+        <p class="card-price">PKR <strong>9,500</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Ultra-Premium</p>
+        <h3 class="card-name">Japanese Wagyu</h3>
+        <p class="card-desc">A5 Japanese Wagyu (100 g), lightly seared on a Himalayan salt block, wasabi butter, ponzu, and microgreens. Served tableside.</p>
+        <p class="card-price">PKR <strong>18,500</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Braised</p>
+        <h3 class="card-name">Short Rib</h3>
+        <p class="card-desc">72-hour braised bone-in beef short rib with creamy polenta, charred broccolini, and a rich Barolo reduction.</p>
+        <p class="card-price">PKR <strong>6,500</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Lamb</p>
+        <h3 class="card-name">Lamb Shank</h3>
+        <p class="card-desc">Slow-braised Australian lamb shank with saffron orzo, roasted root vegetables, gremolata, and a rich lamb jus reduction.</p>
+        <p class="card-price">PKR <strong>5,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Potato-Crusted Sea Bass</h3>
+        <p class="card-desc">Pan-crisped sea bass fillet with a potato-scale crust, beurre blanc, asparagus, and caramelised baby fennel.</p>
+        <p class="card-price">PKR <strong>5,400</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Lobster Orecchiette</h3>
+        <p class="card-desc">Orecchiette pasta with whole butter-poached lobster tail, bisque sauce, tarragon, and shaved Bottarga.</p>
+        <p class="card-price">PKR <strong>7,200</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Seafood</p>
+        <h3 class="card-name">Frutti di Mare</h3>
+        <p class="card-desc">A bountiful platter of grilled lobster, king prawns, scallops, clams, and mussels with lemon-herb butter and rustic bread.</p>
+        <p class="card-price">PKR <strong>9,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Duck</p>
+        <h3 class="card-name">Duck à l'Orange</h3>
+        <p class="card-desc">Whole-roasted duck breast with a classic orange and Grand Marnier reduction, dauphinoise potatoes, and green beans amandine.</p>
+        <p class="card-price">PKR <strong>5,600</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FROM THE BAR ─────────────────────────────────────────────── -->
+  <section class="menu-section" id="bar">
+    <div class="section-header">
+      <span class="section-label">Libations</span>
+      <h2 class="section-title">From The Bar</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="drink-list">
+
+      <div class="drink-item">
+        <span class="drink-name">Citrus Fizz</span>
+        <span class="drink-price">PKR 900</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Pomococo</span>
+        <span class="drink-price">PKR 900</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Orange &amp; Pomegranate</span>
+        <span class="drink-price">PKR 900</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Virgin Bloody Mary</span>
+        <span class="drink-price">PKR 950</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Seasonal Juice</span>
+        <span class="drink-price">PKR 700</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Virgin Mint Cucumber</span>
+        <span class="drink-price">PKR 900</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Mojitos</span>
+        <span class="drink-price">PKR 1,000</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Margarita</span>
+        <span class="drink-price">PKR 1,000</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Iced Tea</span>
+        <span class="drink-price">PKR 700</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Canned Sodas</span>
+        <span class="drink-price">PKR 400</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Fresh Lime</span>
+        <span class="drink-price">PKR 600</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Water</span>
+        <span class="drink-price">PKR 200</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Murree Sparklets</span>
+        <span class="drink-price">PKR 350</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Club Soda</span>
+        <span class="drink-price">PKR 300</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── ILLY COFFEES ─────────────────────────────────────────────── -->
+  <section class="menu-section" id="coffee">
+    <div class="section-header">
+      <span class="section-label">Illy Certified</span>
+      <h2 class="section-title">Illy Coffees</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="drink-list">
+
+      <div class="drink-item">
+        <span class="drink-name">Espresso</span>
+        <span class="drink-price">PKR 500</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Caffè Americano</span>
+        <span class="drink-price">PKR 550</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Latte</span>
+        <span class="drink-price">PKR 700</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Cappuccino</span>
+        <span class="drink-price">PKR 700</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Flat White</span>
+        <span class="drink-price">PKR 750</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Cortado</span>
+        <span class="drink-price">PKR 700</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Macchiato</span>
+        <span class="drink-price">PKR 650</span>
+      </div>
+      <div class="drink-item">
+        <span class="drink-name">Spanish Latte</span>
+        <span class="drink-price">PKR 800</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── DESSERTS ─────────────────────────────────────────────────── -->
+  <section class="menu-section" id="desserts">
+    <div class="section-header">
+      <span class="section-label">Sweet Endings</span>
+      <h2 class="section-title">Desserts</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+
+      <div class="card">
+        <p class="card-tag">Classic</p>
+        <h3 class="card-name">Classic Cheesecake</h3>
+        <p class="card-desc">Silky New York-style baked cheesecake on a butter biscuit base, finished with fresh berry compote and a quenelle of Chantilly cream.</p>
+        <p class="card-price">PKR <strong>1,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Signature</p>
+        <h3 class="card-name">Basque Burnt Cheesecake</h3>
+        <p class="card-desc">The iconic San Sebastián burnt cheesecake — caramelised top, impossibly creamy centre, served warm with a drizzle of local wildflower honey.</p>
+        <p class="card-price">PKR <strong>1,800</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Italian</p>
+        <h3 class="card-name">Tiramisù</h3>
+        <p class="card-desc">The classic Venetian tiramisu — ladyfingers soaked in espresso and Marsala, layered with mascarpone cream, and dusted with bitter cocoa.</p>
+        <p class="card-price">PKR <strong>1,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">French Classic</p>
+        <h3 class="card-name">Crème Brûlée</h3>
+        <p class="card-desc">Vanilla bean custard with a glass-thin caramelised sugar crust, finished tableside with a blowtorch. Served with shortbread biscuits.</p>
+        <p class="card-price">PKR <strong>1,600</strong></p>
+      </div>
+
+      <div class="card">
+        <p class="card-tag">Italian</p>
+        <h3 class="card-name">Panna Cotta</h3>
+        <p class="card-desc">Delicate vanilla panna cotta with a seasonal berry coulis, edible flowers, and crispy tuile. Light, elegant, and deeply satisfying.</p>
+        <p class="card-price">PKR <strong>1,500</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════
+     AMBIANCE
+═══════════════════════════════════════════════════ -->
+<section class="ambiance">
+  <p class="ambiance-label">The Experience</p>
+  <h2 class="ambiance-title">Where Fire Meets Finesse</h2>
+  <div class="ambiance-divider"></div>
+  <p class="ambiance-body">Step into Fuòco and discover a world where the warmth of Italian tradition meets the spirit of modern fine dining. Our interiors blend warm stone, candlelight, and hand-selected art to create an ambiance that is intimate yet alive — the perfect setting for every occasion, from a quiet dinner for two to a celebratory gathering with those you love.</p>
+  <div class="ambiance-stats">
+    <div class="stat">
+      <div class="stat-number">2</div>
+      <div class="stat-label">Locations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">11</div>
+      <div class="stat-label">Menu Sections</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1pm</div>
+      <div class="stat-label">Open Daily</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">Late</div>
+      <div class="stat-label">Until</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     LOCATIONS
+═══════════════════════════════════════════════════ -->
+<section class="locations" id="locations">
+  <div class="section-header">
+    <span class="section-label">Find Us</span>
+    <h2 class="section-title">Our Locations</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="locations-grid">
+
+    <div class="location-card">
+      <p class="location-city">Pakistan</p>
+      <h3 class="location-name">Fuòco Lahore</h3>
+      <div class="location-rule"></div>
+      <p class="location-detail">
+        <strong>Address</strong>
+        DHA Phase VI<br>
+        Lahore, Pakistan
+        <strong>Hours</strong>
+        Open Daily<br>
+        1:00 pm — Late
+        <strong>Reservations</strong>
+        +92 42 000 0000<br>
+        lahore@fuocorestaurants.com
+      </p>
+    </div>
+
+    <div class="location-card">
+      <p class="location-city">Pakistan</p>
+      <h3 class="location-name">Fuòco Islamabad</h3>
+      <div class="location-rule"></div>
+      <p class="location-detail">
+        <strong>Address</strong>
+        F-7 Markaz<br>
+        Islamabad, Pakistan
+        <strong>Hours</strong>
+        Open Daily<br>
+        1:00 pm — Late
+        <strong>Reservations</strong>
+        +92 51 000 0000<br>
+        islamabad@fuocorestaurants.com
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     RESERVATION BAR
+═══════════════════════════════════════════════════ -->
+<section class="reservation">
+  <p class="reservation-text">Reserve Your Table at Fuòco</p>
+  <p class="reservation-sub">Available at both Lahore &amp; Islamabad locations</p>
+  <div class="reservation-links">
+    <a class="reservation-btn primary" href="mailto:reservations@fuocorestaurants.com">Make a Reservation</a>
+    <a class="reservation-btn" href="tel:+924200000000">Call Lahore</a>
+    <a class="reservation-btn" href="tel:+925100000000">Call Islamabad</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer-logo-sig">Fu<span class="accent-o">ò</span>co</div>
+      <p class="footer-tagline">Italian Fire &amp; Flavour</p>
+      <p class="footer-body">Where the warmth of Italian tradition meets the spirit of modern fine dining. Every dish tells a story of fire, passion, and provenance.</p>
+    </div>
+
+    <div>
+      <p class="footer-heading">Lahore</p>
+      <p class="footer-body">
+        DHA Phase VI<br>
+        Lahore, Pakistan<br><br>
+        +92 42 000 0000<br>
+        lahore@fuocorestaurants.com
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-heading">Islamabad</p>
+      <p class="footer-body">
+        F-7 Markaz<br>
+        Islamabad, Pakistan<br><br>
+        +92 51 000 0000<br>
+        islamabad@fuocorestaurants.com
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-heading">Hours &amp; Connect</p>
+      <p class="footer-body">
+        Open Daily<br>
+        1:00 pm — Late<br><br>
+        Follow us<br>
+        @fuoco.restaurants<br>
+        @fuoco.lahore &nbsp;·&nbsp; @fuoco.islamabad
+      </p>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Fuòco Restaurants. All rights reserved. &nbsp;·&nbsp; Lahore &amp; Islamabad, Pakistan
+  </div>
+</footer>
+
+</body>
+</html>
