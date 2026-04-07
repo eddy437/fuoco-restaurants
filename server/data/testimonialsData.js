@@ -1,0 +1,58 @@
+const testimonials = [
+  {
+    id: 1,
+    name: 'Isabella Romano',
+    role: 'Food Critic, La Cucina Magazine',
+    rating: 5,
+    text: 'Fuoco delivers a dining experience that transcends mere food — it is theatre, romance, and pure culinary mastery. The Bistecca Fiorentina is the finest I have had outside of Florence. Simply extraordinary.',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80',
+    date: '2024-11-15',
+  },
+  {
+    id: 2,
+    name: 'James Whitmore',
+    role: 'Executive Chef, The Meridian Hotel',
+    rating: 5,
+    text: 'As a chef myself, I rarely find restaurants that genuinely impress me. Fuoco is a rare exception. The wood-fired oven work is impeccable — the char, the flavour, the timing. Professional excellence at every turn.',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80',
+    date: '2024-10-22',
+  },
+  {
+    id: 3,
+    name: 'Sophia Laurent',
+    role: 'Travel & Lifestyle Blogger',
+    rating: 5,
+    text: 'I have dined across Europe and Fuoco holds its own against the best in Rome and Milan. The atmosphere is intoxicating — dark, sensual, perfectly lit. And the Tiramisù? I still dream about it.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80',
+    date: '2024-09-08',
+  },
+  {
+    id: 4,
+    name: 'Marco Delacroix',
+    role: 'Wine Sommelier',
+    rating: 5,
+    text: 'The wine programme is curated with genuine passion and knowledge. The Barolo pairing with the ossobuco was transcendent. Fuoco understands that wine and food must tell one story together.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80',
+    date: '2024-08-14',
+  },
+  {
+    id: 5,
+    name: 'Priya Sharma',
+    role: 'CEO, Luminary Group',
+    rating: 5,
+    text: 'We hosted our company anniversary dinner at Fuoco and it was flawless from start to finish. The private dining experience, the bespoke menu, the attentive service — everything exceeded our expectations.',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80',
+    date: '2024-07-30',
+  },
+  {
+    id: 6,
+    name: 'Thomas Bergmann',
+    role: 'Architect & Design Enthusiast',
+    rating: 5,
+    text: 'Even before the food arrives, Fuoco impresses with its interior design — moody, elegant, with the most gorgeous open wood-fire kitchen I have ever seen. A complete sensory experience.',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80',
+    date: '2024-06-19',
+  },
+];
+
+module.exports = testimonials;
