@@ -1,0 +1,161 @@
+export const menuData = [
+  // Starters
+  {
+    id: 1, category: 'starters', name: 'Bruschetta al Pomodoro',
+    description: 'Toasted sourdough rubbed with garlic, ripe San Marzano tomatoes, fresh basil, aged balsamic reduction',
+    price: 12, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=800&q=80',
+  },
+  {
+    id: 2, category: 'starters', name: 'Burrata con Prosciutto',
+    description: 'Creamy burrata from Puglia, 24-month aged Prosciutto di Parma, rocket, truffle honey drizzle',
+    price: 18, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=800&q=80',
+  },
+  {
+    id: 3, category: 'starters', name: 'Carpaccio di Manzo',
+    description: 'Thinly sliced beef tenderloin, shaved Parmigiano-Reggiano, capers, lemon oil, micro arugula',
+    price: 22, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1599921841143-819065a55cc5?w=800&q=80',
+  },
+  {
+    id: 4, category: 'starters', name: 'Zuppa di Pesce',
+    description: 'Rich Sicilian-style seafood broth with clams, mussels, shrimp, and saffron-infused tomato base',
+    price: 24, tags: ['Spicy'],
+    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80',
+  },
+  // Pizza
+  {
+    id: 5, category: 'pizza', name: 'Margherita Verace',
+    description: 'San Marzano DOP tomatoes, fior di latte mozzarella, fresh basil, extra virgin olive oil, fired at 485°C',
+    price: 22, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
+  },
+  {
+    id: 6, category: 'pizza', name: 'Fuoco Diavola',
+    description: 'Nduja spread, spicy Calabrian salami, smoked mozzarella, chilli honey, fresh chilli, basil',
+    price: 26, tags: ['Spicy', 'Chef Special'],
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80',
+  },
+  {
+    id: 7, category: 'pizza', name: 'Tartufo Bianco',
+    description: 'White base, black truffle paste, fontina, wild mushrooms, truffle oil, microgreens, 63° egg',
+    price: 34, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80',
+  },
+  {
+    id: 8, category: 'pizza', name: 'Quattro Formaggi',
+    description: 'Mozzarella, gorgonzola dolce, aged pecorino, smoked scamorza, walnut, rosemary honey',
+    price: 28, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=800&q=80',
+  },
+  // Pasta
+  {
+    id: 9, category: 'pasta', name: 'Tagliatelle al Ragù',
+    description: 'Hand-rolled egg tagliatelle, 8-hour braised Wagyu beef ragù, Parmigiano-Reggiano 36 months',
+    price: 28, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800&q=80',
+  },
+  {
+    id: 10, category: 'pasta', name: 'Tortellini in Brodo',
+    description: 'House-made tortellini filled with mortadella and ricotta, slow-cooked capon consommé',
+    price: 26, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80',
+  },
+  {
+    id: 11, category: 'pasta', name: 'Cacio e Pepe Reginette',
+    description: 'Ruffled pasta, Pecorino Romano, Parmigiano, freshly cracked Tellicherry black pepper, guanciale crisp',
+    price: 24, tags: [],
+    image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=800&q=80',
+  },
+  {
+    id: 12, category: 'pasta', name: 'Pappardelle al Tartufo',
+    description: 'Wide egg pappardelle, black truffle ragù, porcini mushrooms, aged butter, Parmigiano, chive oil',
+    price: 36, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80',
+  },
+  // Mains
+  {
+    id: 13, category: 'mains', name: 'Bistecca Fiorentina',
+    description: '800g dry-aged Chianina T-bone, rosemary, garlic, extra virgin olive oil, roasted bone marrow',
+    price: 85, tags: ['Chef Special', 'Bestseller'],
+    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80',
+  },
+  {
+    id: 14, category: 'mains', name: 'Branzino al Cartoccio',
+    description: 'Whole Mediterranean sea bass baked in parchment, capers, olives, cherry tomatoes, lemon, herbs',
+    price: 48, tags: [],
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&q=80',
+  },
+  {
+    id: 15, category: 'mains', name: 'Ossobuco alla Milanese',
+    description: 'Slow-braised veal shank, saffron risotto, gremolata, natural jus, 4-hour preparation',
+    price: 52, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80',
+  },
+  {
+    id: 16, category: 'mains', name: 'Agnello al Forno',
+    description: 'Slow-roasted rack of lamb, rosemary-garlic crust, cannellini bean purée, salsa verde, mint jus',
+    price: 58, tags: ['Spicy'],
+    image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800&q=80',
+  },
+  // Desserts
+  {
+    id: 17, category: 'desserts', name: 'Tiramisù della Casa',
+    description: 'House recipe tiramisu, Savoiardi soaked in Illy espresso, mascarpone cream, Valrhona cocoa',
+    price: 14, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80',
+  },
+  {
+    id: 18, category: 'desserts', name: 'Panna Cotta al Miele',
+    description: 'Vanilla bean panna cotta, Sicilian wildflower honey, candied walnuts, honeycomb, lavender',
+    price: 12, tags: [],
+    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80',
+  },
+  {
+    id: 19, category: 'desserts', name: 'Sfogliatella al Cioccolato',
+    description: 'Dark chocolate lava pastry, Amalfi lemon cream, candied orange, Maldon sea salt, gold leaf',
+    price: 16, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80',
+  },
+  {
+    id: 20, category: 'desserts', name: 'Gelato Artigianale',
+    description: 'Three scoops of rotating artisan gelato, pistachio praline, seasonal compote, wafer',
+    price: 10, tags: [],
+    image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?w=800&q=80',
+  },
+  // Drinks
+  {
+    id: 21, category: 'drinks', name: 'Barolo DOCG 2018',
+    description: "Piedmont's king of wines, Nebbiolo grape, 36-month barrel aged, dried roses, tar, cherry",
+    price: 18, tags: ['Chef Special'],
+    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80',
+  },
+  {
+    id: 22, category: 'drinks', name: 'Negroni Classico',
+    description: "Campari, Hendrick's gin, Carpano Antica vermouth, orange peel, hand-carved ice sphere",
+    price: 16, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80',
+  },
+  {
+    id: 23, category: 'drinks', name: 'Aperol Spritz',
+    description: 'Aperol, Prosecco DOC, San Pellegrino sparkling water, blood orange, olives',
+    price: 13, tags: [],
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+  },
+  {
+    id: 24, category: 'drinks', name: 'Espresso Martini',
+    description: 'Double Illy espresso, Kahlúa, Absolut Elyx vodka, vanilla syrup, three coffee beans',
+    price: 15, tags: ['Bestseller'],
+    image: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800&q=80',
+  },
+];
+
+export const menuCategories = [
+  { key: 'starters', label: 'Starters' },
+  { key: 'pizza', label: 'Wood Fired Pizza' },
+  { key: 'pasta', label: 'Handmade Pasta' },
+  { key: 'mains', label: 'Signature Mains' },
+  { key: 'desserts', label: 'Desserts' },
+  { key: 'drinks', label: 'Drinks' },
+];
